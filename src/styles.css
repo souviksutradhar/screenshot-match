@@ -151,3 +151,31 @@
     color: var(--color-foreground);
   }
 }
+
+/* Print: only the dossier modal content is emitted (for cybercrime.gov.in attachment) */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .dossier-print,
+  .dossier-print * {
+    visibility: visible;
+  }
+
+  .dossier-print {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    background: #fff !important;
+    color: #000 !important;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dossier-print [data-no-print] {
+    display: none !important;
+  }
+}
